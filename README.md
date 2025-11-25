@@ -1,16 +1,17 @@
-# second_laboratory_exercise
+# Second Laboratory Exercise for the class Mobile Information Systems
 
-Second laboratory exercise
+## Category Screen
 
-## Getting Started
+<img width="1080" height="2340" alt="CategoryScreen" src="https://github.com/user-attachments/assets/3989bb56-6b72-449b-a6d1-78e550a5dd1b" />
 
-This project is a starting point for a Flutter application.
+## Meal Screen
 
-A few resources to get you started if this is your first Flutter project:
+<img width="1080" height="2340" alt="MealScreen" src="https://github.com/user-attachments/assets/7cd08263-0cea-4850-b7d7-cbbba13bcbdc" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Meal Details (Ingredients)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="1080" height="2340" alt="MealDetails_Ingredients" src="https://github.com/user-attachments/assets/c0b007e7-12d4-45e1-8a26-437f355fdd1b" />
+
+## Meal Details (Instructions)
+
+<img width="1080" height="2340" alt="MealDetails_Instructions" src="https://github.com/user-attachments/assets/4c67c011-9a4c-4534-9543-9ff272faa253" />
