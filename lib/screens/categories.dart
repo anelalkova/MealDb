@@ -3,6 +3,7 @@ import '../models/category.dart';
 import '../services/api_service.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/category_card.dart';
+import 'favourites.dart';
 import 'meal_details.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -15,7 +16,6 @@ class CategoriesScreen extends StatefulWidget {
 class _CategoriesScreenState extends State<CategoriesScreen> {
   late List<Category> _categories;
   List<Category> _filteredCategories = [];
-
   bool _isLoading = true;
   String _searchQuery = '';
   final ApiService _apiService = ApiService();
@@ -64,9 +64,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         : null,
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 16,
-                    ),
+                        vertical: 10, horizontal: 16),
                   ),
                 ),
               ),
@@ -91,6 +89,16 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 }
               },
             ),
+            const SizedBox(width: 8),
+            IconButton(
+              icon: const Icon(Icons.favorite),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const FavouritesScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -108,18 +116,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(
-                          Icons.search_off,
-                          size: 64,
-                          color: Colors.grey,
-                        ),
+                        Icon(Icons.search_off,
+                            size: 64, color: Colors.grey),
                         SizedBox(height: 16),
                         Text(
                           "No categories found",
                           style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.grey,
-                          ),
+                              fontSize: 18, color: Colors.grey),
                         ),
                       ],
                     ),
@@ -129,25 +132,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 return CategoryCard(category: category);
               },
               childCount: _filteredCategories.length,
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Center(
-                child: SizedBox(
-                  width: 185,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Anastasija Lalkova 223023",
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade600),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                      isDense: true,
-                    ),
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                ),
-              ),
             ),
           ),
         ],
